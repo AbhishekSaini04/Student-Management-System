@@ -73,6 +73,7 @@
 </header>
 <main>
 <h1 style="margin: 40px 0px;">Feedbacks</h1>
+<form  action="/sms/php/deleteAll.php?file=feedback" method="post"><input class="button btn btn-outline-danger " type="submit" name="delete" value="Delete All Recordes"></form>
         <table  class="table table-primary" id="table">
             <thead>
                 <tr>

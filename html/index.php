@@ -68,18 +68,18 @@
 <main><h1 style="margin: 59px 0px;">Student Management System</h1>
     <form action="/sms/php/infoSumit.php" method="post">
     <div class="input-container">
-      <input style="background-color: floralwhite;"  class="form-control" required type="text" placeholder="Name"    id="name"   name="name"   >
-      <input style="background-color: floralwhite;"  class="form-control" required type="number" placeholder="Roll No."  id="rollno"  name="rollno"  >
-      <input style="background-color: floralwhite;"  class="form-control" required type="number" placeholder="O.S. Marks"     id="S1"    name="s1"    >
-      <input  style="background-color: floralwhite;" class="form-control" required type="number" placeholder="C Language Marks"     id="S2"    name="s2"    >
-      <input style="background-color: floralwhite;"  class="form-control" required type="number" placeholder="D.C. Marks"     id="S3"    name="s4"    >
-      <input style="background-color: floralwhite;"  class="form-control" required type="number" placeholder="D.E. Marks"     id="S4"    name="s3"    >
+      <input style="color: black; background-color: floralwhite;"  class="form-control" required type="text" placeholder="Name"    id="name"   name="name"   >
+      <input style="color: black; background-color: floralwhite;"  class="form-control" required type="number" placeholder="Roll No."  id="rollno"  name="rollno"  >
+      <input style="color: black; background-color: floralwhite;"  class="form-control" required type="number" placeholder="O.S. Marks"     id="S1"    name="s1"    >
+      <input  style="color: black; background-color: floralwhite;" class="form-control" required type="number" placeholder="C Language Marks"     id="S2"    name="s2"    >
+      <input style="color: black; background-color: floralwhite;"  class="form-control" required type="number" placeholder="D.C. Marks"     id="S3"    name="s4"    >
+      <input style="color: black; background-color: floralwhite;"  class="form-control" required type="number" placeholder="D.E. Marks"     id="S4"    name="s3"    >
     </div>
     
     <button  class="button btn btn-outline-info" type="submit" id="submit">Add Student Information</button>
     
   </form> 
-  <form  action="/sms/php/deleteAll.php" method="post"><input class="button btn btn-outline-danger " type="submit" name="delete" value="Delete All Recordes"></form>
+  <form  action="/sms/php/deleteAll.php?file=index" method="post"><input class="button btn btn-outline-danger " type="submit" name="delete" value="Delete All Recordes"></form>
     <!-- <form action="">
 
       <input class="" type="submit" >
@@ -97,7 +97,7 @@
                     <th>D.E.</th>
                     <th>Average</th>
                     <th>Status</th>
-                    <!-- <th>Action</th> -->
+                    <th>Action</th>
                 </tr>
             </thead>
             <?php 
@@ -124,7 +124,12 @@
                           }
                  ?></td> 
                 
-          
+                 <td><?php
+                  $link="/sms/php/deleteRow.php?rollno=";
+                  $name=$rows['name'];
+                   echo "<a href='$link $name'>   Delete Record </a>";      ?> </td>
+
+
             </tr> 
         
         <?php } ?> 

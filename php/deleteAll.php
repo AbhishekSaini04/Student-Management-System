@@ -9,12 +9,25 @@ $severName="localhost";
     if(!$conn){
         echo "Not Connected";
     }
+if( $_GET['file']=="index"){
+
     $sql = "DELETE from marks";
     $result = ($conn->query($sql)); 
-
+    echo '<script>
+    window.location = "/sms/html/index.php";
+</script>';
+// echo  "I'm index";
+}
+else{
+    
+    $sql = "DELETE from feedback";
+    $result = ($conn->query($sql)); 
+    
+    echo '<script>
+    window.location = "/sms/html/viewFeedback.php";
+    </script>';
+    // echo  "I'm feedback";
+}
+    
 
 ?>
-<script>
-    window.location = "/sms/html/index.php";
-
-</script>
